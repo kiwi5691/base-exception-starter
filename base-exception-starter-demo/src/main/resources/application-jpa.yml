@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://134.175.132.161:3306/exception?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true
+#    url: jdbc:mysql://localhost:3306/sharenotes_dev?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: exception
+    password: ZTXcyZnfrY6zbESn
+  jpa:
+    properties:
+      hibernate:
+#        jdbc:
+        #batch save/update
+#          batch_size: 500
+#          batch_versioned_data: true
+#        order_inserts: true
+#        order_updates: true
+#        ddl-auto: update
+        hbm2ddl:
+          auto: create
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+    show-sql: true
