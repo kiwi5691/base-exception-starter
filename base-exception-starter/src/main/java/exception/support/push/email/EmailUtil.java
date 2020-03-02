@@ -32,13 +32,9 @@ public class EmailUtil {
     public static ExecutorService emailExePool =new
             ThreadPoolExecutor(1, 10, 1000, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), Executors.defaultThreadFactory(),new ThreadPoolExecutor.AbortPolicy());
 
-
     private String sender;
-
     private String host;
-
     private String pwd;
-
     public EmailUtil(String sender, String host, String pwd) {
         this.sender = sender;
         this.host = host;

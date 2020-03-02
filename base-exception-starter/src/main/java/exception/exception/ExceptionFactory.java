@@ -1,7 +1,6 @@
 package exception.exception;
 
-import exception.constant.ExceptionConstant;
-import exception.exception.base.BusinessException;
+import exception.exception.base.ConstantException;
 import exception.exception.define.*;
 import org.springframework.stereotype.Component;
 
@@ -20,15 +19,15 @@ public class ExceptionFactory {
 //        this.propertiesUtils = propertiesUtilsAUtowired;
 //    }
 
-    public static DaoException getDaoException(String moduleCode, String exceptionFLag, String message, Map<String, Object> properties, Throwable throwable) {
-        return new DaoException(moduleCode, exceptionFLag, message, throwable);
+    public static DataBaseException getDaoException(String moduleCode, String exceptionFLag, String message, Map<String, Object> properties, Throwable throwable) {
+        return new DataBaseException(moduleCode, exceptionFLag, message, throwable);
     }
 
-    public static DaoException getDaoException(String systemCode, String moduleCode, String exceptionFLag, String message, Map<String, Object> properties, Throwable throwable) {
-        return new DaoException(moduleCode, exceptionFLag, message, throwable);
+    public static DataBaseException getDaoException(String systemCode, String moduleCode, String exceptionFLag, String message, Map<String, Object> properties, Throwable throwable) {
+        return new DataBaseException(moduleCode, exceptionFLag, message, throwable);
     }
 
-    public static BusinessException getBusinessException(String moduleCode, String message) {
+    public static ConstantException getBusinessException(String moduleCode, String message) {
         return new ValidateException(moduleCode,"ss", message);
     }
 
@@ -54,13 +53,6 @@ public class ExceptionFactory {
     }
 
 
-
-    /**
-     *  
-     * @Description 数据操作影响行数校验异常
-     * @Date 11:05 2018/12/8
-     * @Param [moduleCode, tableName, exceptRows, actRows]
-     **/
     public static EffectRowsException getEffectRowsException(String moduleCode,String tableName,Integer exceptRows,Integer actRows){
         return EffectRowsException.getEffectRowsException(moduleCode,"ss",tableName,exceptRows,actRows);
     }

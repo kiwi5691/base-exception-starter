@@ -9,7 +9,6 @@ public class DBProperties {
     private String password;
     private String driverClassName;
     DBProperties(){
-
     }
     public String getUrl() {
         return url;

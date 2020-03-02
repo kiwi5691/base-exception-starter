@@ -8,15 +8,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * 邮箱配置
  */
 @ConfigurationProperties(prefix = "exception.email")
-public class EmailConfigruation {
-
+public class EmailConfiguration {
 
     private String sender;
 
     private String host;
 
     private String pwd;
-
 
     public String getSender() {
         return sender;
